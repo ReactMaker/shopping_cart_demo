@@ -48,6 +48,7 @@ export default class Content extends Component {
 
   render() {
     const { modal, products, cart } = this.state;
+    const totalPrice = cart.reduce((acc, item) => (acc += item.price), 0);
 
     return (
       <div>
@@ -126,11 +127,11 @@ export default class Content extends Component {
               </Table>
               <Alert color="success" className="text-right">
                 總價：
-                {cart.reduce((acc, item) => (acc += item.price), 0)}
+                {totalPrice}
               </Alert>
             </ModalBody>
             <ModalFooter>
-              <Button color="primary" disabled={cart.length === 0} onClick={this.toggle}>結帳</Button>{' '}
+              <Button color="primary" disabled={cart.length === 0} onClick={() => alert(totalPrice)}>結帳</Button>{' '}
               <Button color="secondary" onClick={this.toggle}>取消</Button>
             </ModalFooter>
           </Modal>
