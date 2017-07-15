@@ -1,10 +1,10 @@
-# Reactstrap Example
+# Shopping Cart Demo
 
 使用ReactStrap版型，搭配React state做出購物車
 
-![Imgur](https://i.imgur.com/Kon1Xbx.png)
+![Imgur](https://i.imgur.com/vqh50qp.jpg)
 
-## [DEMO](https://reactmaker.github.io/reactstrap_example/#/)
+## [DEMO](https://reactmaker.github.io/shopping_cart_demo/#/)
 
 ## 特色
 
