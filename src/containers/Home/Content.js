@@ -76,7 +76,7 @@ export default class Content extends Component {
                       <CardTitle>{product.title}</CardTitle>
                       <CardSubtitle>價格：{product.price}</CardSubtitle>
                       <CardText>{product.desc}</CardText>
-                      <Button color="secondary">購買</Button>
+                      <Button color="secondary" onClick={() => this.addToCart(product)}>購買</Button>
                     </CardBlock>
                   </Card>
                 </Col>
