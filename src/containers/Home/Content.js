@@ -15,11 +15,11 @@ export default class Content extends Component {
 
   getProductList = () => {
     axios.get('https://demojson.herokuapp.com/cart')
-    .then((response) => {
-      this.setState({
-        products: response.data,
+      .then((response) => {
+        this.setState({
+          products: response.data,
+        });
       });
-    });
   }
 
   addToCart = (product) => {
@@ -99,28 +99,18 @@ export default class Content extends Component {
                     <th>#</th>
                     <th>品項</th>
                     <th>價格</th>
-                    <th>數量</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td width="250">DEVIL部品~ 辣椒多層次氣門散熱蓋~FORCE、SMAX專用</td>
-                    <td>2629</td>
-                    <td>x 1</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>FORCE專用 碳纖維排氣管護片側邊貼片</td>
-                    <td>2928</td>
-                    <td>x 1</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>FORCE專改~ FORCE專用歐盟方向燈翹牌架套餐</td>
-                    <td>2659</td>
-                    <td>x 1</td>
-                  </tr>
+                  {
+                    cart.map((item, index) => (
+                      <tr>
+                        <th scope="row">{index + 1}</th>
+                        <td width="250">{item.title}</td>
+                        <td>{item.price}</td>
+                      </tr>
+                    ))
+                  }
                 </tbody>
               </Table>
             </ModalBody>
