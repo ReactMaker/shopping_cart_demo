@@ -5,6 +5,7 @@
   "author": "ReactMaker",
   "dependencies": {
     "autoprefixer": "^6.7.6",
+    "axios": "^0.16.2",
     "babel-core": "^6.7.6",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^6.2.4",

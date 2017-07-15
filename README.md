@@ -14,6 +14,7 @@
 * [babel stage-0 ](https://github.com/babel/babel)
 * [eslint](http://eslint.org)
 * [reactstrap](https://reactstrap.github.io/)
+* [axios](https://github.com/mzabriskie/axios)
 
 ## 需求配置
 * node `^4.5.0`
