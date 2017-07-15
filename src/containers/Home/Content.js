@@ -130,7 +130,7 @@ export default class Content extends Component {
               </Alert>
             </ModalBody>
             <ModalFooter>
-              <Button color="primary" onClick={this.toggle}>結帳</Button>{' '}
+              <Button color="primary" disabled={cart.length === 0} onClick={this.toggle}>結帳</Button>{' '}
               <Button color="secondary" onClick={this.toggle}>取消</Button>
             </ModalFooter>
           </Modal>
