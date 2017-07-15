@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Jumbotron, Button, Card, CardImg, CardBlock, CardTitle, CardSubtitle, CardText, Modal, ModalHeader, ModalBody, ModalFooter, Table } from 'reactstrap';
+import { Container, Row, Col, Jumbotron, Button, Card, CardImg, CardBlock, CardTitle, CardSubtitle, CardText, Modal, ModalHeader, ModalBody, ModalFooter, Table, Alert } from 'reactstrap';
 
 export default class Content extends Component {
   state = {
@@ -113,6 +113,10 @@ export default class Content extends Component {
                   }
                 </tbody>
               </Table>
+              <Alert color="success" className="text-right">
+                總價：
+                {cart.reduce((acc, item) => (acc += item.price), 0)}
+              </Alert>
             </ModalBody>
             <ModalFooter>
               <Button color="primary" onClick={this.toggle}>結帳</Button>{' '}
