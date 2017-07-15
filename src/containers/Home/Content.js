@@ -6,6 +6,7 @@ export default class Content extends Component {
   state = {
     modal: false,
     products: [],
+    cart: [],
   }
 
   componentDidMount = () => {
@@ -28,7 +29,7 @@ export default class Content extends Component {
   }
 
   render() {
-    const { modal, products } = this.state;
+    const { modal, products, cart } = this.state;
 
     return (
       <div>
@@ -51,7 +52,7 @@ export default class Content extends Component {
                 </p>
                 <hr className="my-2" />
                 <p className="lead">
-                  <Button color="primary" onClick={this.toggle}>購物車</Button>
+                  <Button color="primary" onClick={this.toggle}>購物車({cart.length})</Button>
                 </p>
               </Jumbotron>
             </Col>
