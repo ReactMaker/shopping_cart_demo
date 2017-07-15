@@ -22,6 +22,15 @@ export default class Content extends Component {
     });
   }
 
+  addToCart = (product) => {
+    const cart = this.state.cart;
+    cart.push(product);
+
+    this.setState({
+      cart,
+    });
+  }
+
   toggle = () => {
     this.setState({
       modal: !this.state.modal,
