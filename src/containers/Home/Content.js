@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Jumbotron, Button, Card, CardImg, CardBlock, CardTitle, CardSubtitle, CardText, Modal, ModalHeader, ModalBody, ModalFooter, Table, Alert } from 'reactstrap';
+import Product from './Product.js';
 
 export default class Content extends Component {
   state = {
@@ -79,23 +80,12 @@ export default class Content extends Component {
           <Row>
             {
               products.map(product =>
-                <Col sm={6} md={4} className="mb-3">
-                  <Card>
-                    <CardImg width={'100%'} src={product.img} />
-                    <CardBlock className="text-center">
-                      <CardTitle>{product.title}</CardTitle>
-                      <CardSubtitle>價格：{product.price}</CardSubtitle>
-                      <CardText>{product.desc}</CardText>
-                      <Button
-                        disabled={cart.find(item => item.id === product.id)}
-                        color="secondary"
-                        onClick={() => this.addToCart(product)}
-                      >
-                        購買
-                      </Button>
-                    </CardBlock>
-                  </Card>
-                </Col>
+                <Product
+                  key={product.id}
+                  disabled={cart.find(item => item.id === product.id)}
+                  product={product}
+                  onClick={this.addToCart}
+                />
               )
             }
           </Row>
